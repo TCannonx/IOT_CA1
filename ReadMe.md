@@ -4,9 +4,9 @@ This file will detail the steps taken to analyse the live data from a pi sensor 
 
 ### Prerequisites
 
-markup: * Python
-            * Pandas
-            * Boto3
-            * Streamlit
+* Python
+* Pandas
+* Boto3
+* Streamlit
             
-        * AWS Account
+* AWS Account
