@@ -10,3 +10,4 @@ This file will detail the steps taken to analyse the live data from a pi sensor 
   * Streamlit
             
 * AWS Account
+* Node.js
