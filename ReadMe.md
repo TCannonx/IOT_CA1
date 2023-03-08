@@ -41,5 +41,5 @@ the data is stored in a pandas dataframe where it is then cleaned, formatted and
 
 minimum, maximimum, average and current values are then calculated from the daataframe to be displayed by the dashboarding application.
 
-![alt text](https://github.com/tcannon/[reponame]/blob/[branch]/image.jpg?raw=true)
+![Alt text](https://github.com/TCannonx/IOT_CA1/blob/main/Architecture%20Diagram.png "Title")
 
