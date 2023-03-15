@@ -1,11 +1,10 @@
 import streamlit as st
 import pandas as pd
-import random
 import time
 import numpy as np
 import plotly.express as px
 import boto3
-from datetime import datetime
+from datetime import datetime, timedelta
 
 def dt_convert(val):
     return datetime.utcfromtimestamp(val / 1000).strftime('%Y-%m-%d %H:%M:%S')
@@ -56,6 +55,11 @@ while run:
 
         clean_data = clean_data.fillna(method='ffill')
         clean_data.fillna('None')
+
+        current_time = datetime.now()
+        last_24_hours = (current_time - timedelta(hours=24)).strftime('%Y-%m-%d %H:%M:%S')
+
+        clean_data = clean_data[(clean_data['sample_time'] > last_24_hours)]
 
         average_temp = np.mean(clean_data['temperature'])
         average_humid = np.mean(clean_data['humidity'])
