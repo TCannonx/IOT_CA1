@@ -18,7 +18,7 @@ This file will detail the steps taken to analyse the live data from a Pi Sensor 
 Create an IAM user group for which to store the IOT thing which will be createwd for the purpose of this project.
 
 ### AWS IOT Core
-* Craete and register a thing on the IOT Core and add to IAM Access Group.
+* Create and register a thing on the IOT Core and add to IAM Access Group.
 * This will act as the device on which to pass the data from Node-Red to the AWS platform.
 * Apply the generic AWS IOT policy to the thing.
 * Download endpoint credntials, certficates and private key whcih relate to the IOT thing to personal computer for later use.
