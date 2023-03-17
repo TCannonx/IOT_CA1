@@ -39,6 +39,8 @@ being sent to the table.
 * This MQTT node will take the endpoint credential, certificate and private key files relating to the aws thing which was created previously, to link to the
 AWS platform.
 
+![Alt text](https://github.com/TCannonx/IOT_CA1/blob/main/Node-Red%20Screenshot.png "Node-Red Environment")
+
 ### DynamoDB
 * Create DynamoDB table using an identifiable name.
 * Set time as the primary key for the table and device number as the sort key, with device data defining the data which will be stored to the table.
