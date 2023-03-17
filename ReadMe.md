@@ -40,7 +40,10 @@ AWS platform.
 * Create DynamoDB table using an identifiable name.
 * Set time as the primary key for the table and device number as the sort key, with device data defining the data which will be stored to the table.
 * Create an aws rule using SQL code:
+```
 SELECT * FROM broker
+```
+
 * Time data should be formatted in $timestamp form to be readable for the dashboard.
 * This will retrieve the data from the mqtt broker and add the table to the data.
 
