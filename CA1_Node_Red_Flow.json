@@ -1,0 +1,143 @@
+[
+    {
+        "id": "f4efafa51f3d39f4",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1a5636b8a2d78b4b",
+        "type": "rpi-sensehatsim in",
+        "z": "f4efafa51f3d39f4",
+        "name": "",
+        "motion": false,
+        "env": true,
+        "stick": true,
+        "x": 180,
+        "y": 420,
+        "wires": [
+            [
+                "f1c91d73683e9993"
+            ]
+        ]
+    },
+    {
+        "id": "36f4a6142977b01c",
+        "type": "mqtt out",
+        "z": "f4efafa51f3d39f4",
+        "name": "MQTT Broker",
+        "topic": "device/5/data",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "19e2f5857df91443",
+        "x": 720,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "f1c91d73683e9993",
+        "type": "join",
+        "z": "f4efafa51f3d39f4",
+        "name": "Join",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "1",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 450,
+        "y": 460,
+        "wires": [
+            [
+                "36f4a6142977b01c"
+            ]
+        ]
+    },
+    {
+        "id": "032f791c68137367",
+        "type": "inject",
+        "z": "f4efafa51f3d39f4",
+        "name": "Longitude / Latitiude",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "coordinate_data",
+        "payload": "{\"longitude\" : 53.3607, \"latitude\" : 6.2512}",
+        "payloadType": "json",
+        "x": 200,
+        "y": 520,
+        "wires": [
+            [
+                "f1c91d73683e9993"
+            ]
+        ]
+    },
+    {
+        "id": "19e2f5857df91443",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "alkesdlfo2lyx-ats.iot.eu-west-1.amazonaws.com",
+        "port": "8883",
+        "tls": "229f17811627925a",
+        "clientid": "truck_3",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "229f17811627925a",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "certificate.pem.crt",
+        "keyname": "private.pem.key",
+        "caname": "AmazonRootCA1.pem",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    }
+]
