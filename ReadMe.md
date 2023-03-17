@@ -2,7 +2,7 @@
 #### Thomas Cannon
 #### x19405504@student.ncirl.ie
 
-This file will detail the steps taken to analyse the live data from a pi sensor hat simulator.
+This file will detail the steps taken to analyse the live data from a Pi Sensor Hat Simulator.
 
 ### Prerequisites
 
@@ -30,6 +30,9 @@ In the IOT Core menu, create an mqtt message broker topic to recieve data from N
 * Create SQL rule to retrieve relevant data from message broker to input to table.
 * Create email messaging to notify user once the device has dropped below a certain temperature
 
+#### Email Notification
+![Alt text](https://github.com/TCannonx/IOT_CA1/blob/main/images/Email%20Notification.png "Email Notification")
+
 ### Node-Red
 * Using Node-Red's drag and drop enviornment, add a ```Pi Hat Simulator``` Out node which is then linked to a MQTT message broker node which will be used
 to publish the data from the sensor to the AWS platform.
@@ -39,7 +42,8 @@ being sent to the table.
 * This MQTT node will take the endpoint credential, certificate and private key files relating to the aws thing which was created previously, to link to the
 AWS platform.
 
-![Alt text](https://github.com/TCannonx/IOT_CA1/blob/main/Node-Red%20Screenshot.png "Node-Red Environment")
+#### Node-Red Environment
+![Alt text](https://github.com/TCannonx/IOT_CA1/blob/main/images/Node-Red%20Screenshot.png "Node-Red Environment")
 
 ### DynamoDB
 * Create DynamoDB table using an identifiable name.
@@ -59,7 +63,9 @@ The data from the DynamoDB table is queried by the script using the boto3 Python
 * The data is stored in a pandas dataframe where it is then cleaned, formatted and ordered by time. the data is also filtered by previous 24 hours.
 * Minimum, maximimum, average and current values are then calculated from the dataframe to be displayed by the dashboarding application.
 
-![Alt text](https://github.com/TCannonx/IOT_CA1/blob/main/Dashboard%20Screenshot.png "Example Dashboard Output")
+#### Example Dashboard Output
+![Alt text](https://github.com/TCannonx/IOT_CA1/blob/main/images/Dashboard%20Screenshot.png "Example Dashboard Output")
 
-![Alt text](https://github.com/TCannonx/IOT_CA1/blob/main/Architecture%20Diagram.png "Architecture Diagram")
+#### Architecture Diagram
+![Alt text](https://github.com/TCannonx/IOT_CA1/blob/main/images/Architecture%20Diagram.png "Architecture Diagram")
 
