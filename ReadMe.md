@@ -52,7 +52,7 @@ SELECT * FROM broker
 The data from the DynamoDB table is queried by the script using the boto3 Python library.
 * The script continuously queries the table while running to access the incoming realtime data and updates accordingly.
 * The data is stored in a pandas dataframe where it is then cleaned, formatted and ordered by time. the data is also filtered by previous 24 hours.
-* Minimum, maximimum, average and current values are then calculated from the daataframe to be displayed by the dashboarding application.
+* Minimum, maximimum, average and current values are then calculated from the dataframe to be displayed by the dashboarding application.
 
 ![Alt text](https://github.com/TCannonx/IOT_CA1/blob/main/Architecture%20Diagram.png "Architecture Diagram")
 
