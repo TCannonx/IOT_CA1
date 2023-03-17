@@ -1,4 +1,6 @@
-# IOT Dashboarding App
+# CA1 IoT Real Time Analytics (BSHDS4) Dashboarding Application
+#### Thomas Cannon
+#### x19405504@student.ncirl.ie
 
 This file will detail the steps taken to analyse the live data from a pi sensor hat simulator.
 
@@ -10,13 +12,19 @@ This file will detail the steps taken to analyse the live data from a pi sensor 
   * Streamlit
 * AWS Account
 * Node.js
+* Email Address
 
+iot core
 create iam access group
 
 Register thing on iot core related to iam access group.
-apply generic uiot policy to thing
+apply generic iot policy to thing
 
 download endpoint credntials, certficates and private key to personal computer for later use
+
+mqtt
+create message broker to recieve data from node red and input to table
+create email messaging to notify user once the device has dropped below a certain temperature
 
 node-red
 in node-red drag and drop enviornment add pi hat simulator out which is linked to mqtt out publishing node.
