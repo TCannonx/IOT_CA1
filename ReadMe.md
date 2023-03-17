@@ -33,6 +33,9 @@ In the IOT Core menu, create an mqtt message broker topic to recieve data from N
 ### Node-Red
 * Using Node-Red's drag and drop enviornment, add a ```Pi Hat Simulator``` Out node which is then linked to a MQTT message broker node which will be used
 to publish the data from the sensor to the AWS platform.
+* Configure longitude and latitude output using an inject node ran on loop to continuously update table with location data.
+* A 2 second delay is added to the circuit using the join node once both the sensor and inject nodes are merged. This is to limit the amount of data
+being sent to the table. 
 * This MQTT node will take the endpoint credential, certificate and private key files relating to the aws thing which was created previously, to link to the
 AWS platform.
 
