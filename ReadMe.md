@@ -31,7 +31,7 @@ In the IOT Core menu, create an mqtt message broker topic to recieve data from N
 * Create email messaging to notify user once the device has dropped below a certain temperature
 
 ### Node-Red
-* Using Node-Red's drag and drop enviornment, add a Pi Hat Simulator Out node which is then linked to a MQTT message broker node which will be used
+* Using Node-Red's drag and drop enviornment, add a ```Pi Hat Simulator``` Out node which is then linked to a MQTT message broker node which will be used
 to publish the data from the sensor to the AWS platform.
 * This MQTT node will take the endpoint credential, certificate and private key files relating to the aws thing which was created previously, to link to the
 AWS platform.
