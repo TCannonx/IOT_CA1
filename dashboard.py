@@ -151,7 +151,7 @@ while run:
             )
 
             hum4.metric(
-                label="Current Humidity ⏳",
+                label="Current Humidity",
                 value=round(recent_humid),
                 delta=round(recent_humid - previous_recent_humid),
             )
@@ -160,12 +160,12 @@ while run:
             long, lat, = st.columns(2)
 
             long.metric(
-                label="Longitude ⏳",
+                label="Longitude",
                 value=round(current_long),
             )
 
             lat.metric(
-                label="Latitude ⏳",
+                label="Latitude",
                 value=round(current_lat),
             )
 
@@ -198,4 +198,3 @@ while run:
 
     # Set 3 second delay on data flow to save processing
     time.sleep(3)
-
