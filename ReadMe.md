@@ -2,7 +2,7 @@
 #### Thomas Cannon
 #### x19405504@student.ncirl.ie
 
-This file will detail the steps taken to analyse the live data from a Pi Sensor Hat Simulator.
+This report will detail the steps taken to analyse the live data from a Pi Sensor Hat Simulator.
 
 ### Prerequisites
 
