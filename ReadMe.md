@@ -60,6 +60,19 @@ SELECT * FROM broker
 * Time data should be formatted in ```$timestamp``` form to be readable for the dashboard.
 * This will retrieve the data from the mqtt broker and add the table to the data.
 
+### Email Notification
+An email notification rule was created using AWS's ```Simple Notifictaion Service``` (SNS). This service takes SQL code to analyse incoming data
+and can be used to create an email notification service.   
+   
+In the case of this project the user is notified when the Raspberry Pi Hat Sensor Simulator's temperature value falls below 20 degrees.
+The user will then be sent an email message stating ther fall and what tge current temperature is. this is computed using the following SQL code:
+
+```
+SELECT 'The temperature level for this device has just dropped below 20. Current temperature is is currently at ' + (temperature) AS message 
+FROM 'device/5/data' 
+WHERE temperature < 20
+```
+
 ### Data Streaming Concepts
 #### Data Processing Window
 This analysis makes use of a ```sliding``` data processing window. The dashbaord focuses soley on data which has been generated within the last
