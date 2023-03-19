@@ -15,7 +15,7 @@ This file will detail the steps taken to analyse the live data from a Pi Sensor 
 * Email Address
 
 ### IAM
-Create an IAM user group for which to store the IOT thing which will be createwd for the purpose of this project.
+Create an IAM user group for which to store the IOT thing which will be created for the purpose of this project.
 
 ### AWS IOT Core
 * Create and register a thing on the IOT Core and add to IAM Access Group.
@@ -56,8 +56,23 @@ SELECT * FROM broker
 * Time data should be formatted in ```$timestamp``` form to be readable for the dashboard.
 * This will retrieve the data from the mqtt broker and add the table to the data.
 
+### Data Streaming Concepts
+#### Data Processing Window
+This analysis makes use of a ```sliding``` data processing window. The dashbaord focuses soley on data which has been generated within the last
+24 hours. For this reason the data used for calculated minimum, maximum and average totals only relate to the last 24 hours of data. 
+  
+This is known as a sliding data processing window because, as time progresses the window changes to exclude data which was processed 
+longer than 24 hours ago.
+
+#### Data Intervals
+In some cases intervals are applied to data being uploaded to a database. An interval is defined as a certain measure of time where breaks freom uploading
+data to the database are added. This is to limit the amoount of data which is uploaded to the database.  
+  
+In this case, it is not necessary to send the values of the sensor for every second to the AWS cloud system. For this reason, a join node is added to
+add a 3 second interval to the data being uploaded. The same 3 second interval is added to the queries made by the Python script to the DynamoDB table.
+
 ### Dashboarding
-* A real-time dashboard is created using Python with the help of the streamlit library.
+* A real-time dashboard is created using Python with the help of the streamlit library.  
 The data from the DynamoDB table is queried by the script using the boto3 Python library.
 * The script continuously queries the table while running to access the incoming realtime data and updates accordingly.
 * The data is stored in a pandas dataframe where it is then cleaned, formatted and ordered by time. the data is also filtered by previous 24 hours.
