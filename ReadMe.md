@@ -2,6 +2,10 @@
 #### Thomas Cannon
 #### x19405504@student.ncirl.ie
 
+[Video Demonstration Link](https://youtu.be/KOmfaQE1NGE)
+
+[Git Repository Link](https://github.com/TCannonx/IOT_CA1)
+
 This report will detail the steps taken to analyse the live data from a Pi Sensor Hat Simulator.
 
 ### Prerequisites
@@ -83,4 +87,5 @@ The data from the DynamoDB table is queried by the script using the boto3 Python
 
 #### Architecture Diagram
 ![Alt text](https://github.com/TCannonx/IOT_CA1/blob/main/images/Architecture%20Diagram.png "Architecture Diagram")
+
 
