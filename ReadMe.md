@@ -6,7 +6,12 @@
 
 [Git Repository Link](https://github.com/TCannonx/IOT_CA1)
 
-This report will detail the steps taken to analyse the live data from a Pi Sensor Hat Simulator.
+### Introduction
+This report will detail the steps taken to analyse the live data from a Pi Sensor Hat Simulator.  
+  
+This project aims to create a simulation of a Raspberry Pi Hat Sensor Simulation using Node-Reds software to create a data stream which
+will be uploaded to Amazon Web Sevices and stored in a database, where it is then queried using Python code for formatting and aggregation and
+to ultimately create a useable real-time dahsboard which can be used to visualise the data stream.
 
 ### Prerequisites
 
